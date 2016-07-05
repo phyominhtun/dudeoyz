@@ -1,0 +1,32 @@
+<!-- Modal -->
+<div class="modal fade modal_dashboard" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <%= form_for @url do |f| %>
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">SHORTEN YOUR LONG LINK</h4>
+        </div>
+        <div class="modal-body">
+          <div class="form-inline">
+            <div class="form-group">
+                  <%= f.text_field :original, class: "form-control", 
+                                  placeholder: "http://www.example.com", type: "url" %>
+              <%= f.hidden_field :random_id, :value => @url.random_id %>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+              <button type="f.button" class="btn btn-block btn-greenish">Shorten</button>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+              <button type="button" class="btn btn-block btn-redish" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

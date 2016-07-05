@@ -1,0 +1,15 @@
+<div id="center">
+	<% if flash[:notice] %>
+		<div class="alert alert-success">
+			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+			<%= flash[:notice].html_safe %>
+		</div>
+	<% end %>
+
+	<% if flash[:alert] %>
+		<div class="alert alert-danger">
+			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+			<%= flash[:alert].html_safe %>
+		</div>
+	<% end %>
+</div>

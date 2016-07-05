@@ -1,0 +1,7 @@
+<%= form_for @url do |f| %>
+	
+	<%= @url.original %><br>
+    <%= f.text_field :random_id %>
+    <%= f.button "Change IT", class: "btn btn-sm btn-blueish",
+      	   			data: {disable_with: "Changing....."} %>
+<% end %>

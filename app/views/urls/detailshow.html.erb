@@ -1,0 +1,69 @@
+<div class="dashboard">
+	<% if user_signed_in? %>
+		<%= render 'layouts/user_dashboard_header' %>
+	<% else %>
+		<%= render 'layouts/visiter_dashboard_header' %>
+	<% end %>
+	<div class="container" id="dasboard_index">
+		<%= render 'layouts/noti' %>
+		<div class="">
+			<div class="page-header" id="center">
+				<% if @visit.title === nil %>
+			  		<h1><<span>/<b>O</b></span>><br>
+			  	<% else %>
+			  		<h1><b><%= @visit.title %></b><br>
+			  	<% end %>
+			  	<small>
+			  		<a href="<%= urlshow_path(@visit.random_id) %>" id="lii">Oye.FR/<%= @visit.random_id %></a>
+			  	</small> <span class="badge"><%= @detail.count %></span>
+			  	<a href="#" class="badge"  data-toggle="modal" data-target="#edit">
+			  		<span class="glyphicon glyphicon-edit"></span>
+			  	</a>
+			  </h1>
+			</div>
+			<table class="table table-bordered">
+				<tr>
+					<th>Id</th>
+					<th>Name</th>
+					<th>Username</th>
+					<th>Email</th>
+					<th>City</th>
+				</tr>
+			<% @detail.order("started_at DESC").limit(nil).each do |d| %>
+				<tr>
+					<td><%= d.os %></td>
+					<td><%= d.browser %></td>
+					<td><%= time_ago_in_words(d.started_at) %></td>
+					<td><%= d.landing_page %></td>
+					<% if d.city === nil %>
+						<td>unknown</td>
+					<% else %>
+						<td><%= d.city %></td>
+					<% end %>
+				</tr>
+			<% end %>
+			</table>
+
+			
+				  
+			<!-- <div class="row">
+				<div class="col-lg-5">
+					<%= column_chart @detail.group_by_hour_of_day(:started_at), colors: ["red"] %>
+				</div>
+				<div class="col-lg-2"></div>
+				<div class="col-lg-5">
+					<%= pie_chart @detail.group(:browser).limit(1).count %>
+				</div>
+			</div>
+				<hr>
+				<%= geo_chart @detail.group(:country).count %> --> 
+		</div>
+		<div class="page_more">
+		</div>
+		<div class="page_more">
+		</div>
+		<div class="page_more">
+		</div>
+	</div>
+</div>
+<%= render 'urls/edit_form' %>

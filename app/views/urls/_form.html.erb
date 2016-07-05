@@ -1,0 +1,14 @@
+<% @url.errors.each do |attr, msg| %>
+	<%= msg %> on <%= attr %>
+<% end %>
+
+<br>
+<div class="form-inline">
+	<div class="form-group">
+		<%= form_for @url do |f| %>
+			<%= f.text_field :original, class: "form-control", placeholder: "http://www.example.com", type: "url" %>
+	    	<%= f.hidden_field :random_id, :value => @url.random_id %>
+	    	<%= f.button "Shorten", class: "btn btn-greenish2 form-control" %>
+		<% end %>
+	</div>
+</div>

@@ -1,0 +1,28 @@
+<% if user_signed_in? %>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a id="brand-title" href="<%= root_path %>"><<span>/O</span>><span class="label label-success" id="beta_title">Beta</span></a></h3>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right" id="navbar-dashboard">
+        <li><a href="#" data-toggle="modal" data-target="#mySupport">Support</a></li>
+        <li><a href="#" data-toggle="modal" data-target="#myModal">Shorten</a></li>
+        <li><a href="<%= destroy_user_session_path %>"><span class="glyphicon glyphicon-off"></span></a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<%= render 'pages/shorten_modal' %>
+<%= render 'pages/support_modal' %>
+<% end %>
