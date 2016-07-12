@@ -16,7 +16,7 @@
 				</div>
 				<hr>
 				<% if current_user.name === nil %>
-					<b>Oye Doe</b>
+					<b>Oyz Doe</b>
 				<% else %>
 					<b><%= current_user.name %></b>
 				<% end %>
@@ -45,37 +45,6 @@
 				</div>
 			</div>
 			<div class="col-lg-3 col-md-3 col-sm-1"></div>
-			<!-- <div class="col-lg-8 col-md-6">
-				<div class="jumbotron">
-					<div id="center">
-						<div class="progress">
-						  <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" 
-						  		aria-valuenow="40" 
-						  		aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-						  </div>
-						</div>
-						<h6>VISIT 325 / 5000</h6>
-						<hr>
-						<div class="progress">
-						  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="<%= @urlprogressbar %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= @urlprogressbar %>%">
-						    <span class="sr-only"><%= @urlprogressbar %> Complete (success)</span>
-						  </div>
-						</div>
-						<h6>URL <%= @urlprogressbar %>% already been used</h6>
-						<hr>
-						<div class="row">
-							<div class="col-lg-6">
-								<b>Only 4675 Visit Left</b></br>
-								<a href="#" data-toggle="modal" data-target="#More">Buy More Visit</a>
-							</div>
-							<div class="col-lg-6">
-								<b>Only 22 URL Left</b></br>
-								<a href="#" data-toggle="modal" data-target="#More">Buy More Visit</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div> -->
 		</div>
 
 		<div class="row" id="center">
@@ -87,30 +56,25 @@
 						<% else %>
 							<h3><%= url.title %></h3><br>
 						<% end %>	
-						<a href="<%= urlshow_path(url.random_id) %>">http://localhost:3000/<%= url.random_id %></a>
+						<a href="<%= urlshow_path(url.random_id) %>">http://oyz.kr/<%= url.random_id %></a>
 						<span class="badge">
 							<%= Visit.where(landing_page: "http://localhost:3000/" + url.random_id).count %>
 						</span>
 						<br>
 						<%= time_ago_in_words(url.created_at) %>
 						<div class="row">
-							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
 								<a href="<%= detailshow_path(url.random_id) %>">
 									<h4 data-toggle="tooltip" data-placement="top" title="Analysis"><span class="glyphicon glyphicon-signal"></span></h4>
 								</a>
 							</div>
-							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-								<a href="#" data-toggle="modal" data-target="#More"> 
-									<h4 data-toggle="tooltip" data-placement="top" title="Edit"><span class="glyphicon glyphicon-wrench"></span></h4>
-								</a>
-							</div>
-							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
 								<h4 data-toggle="tooltip" data-placement="top" title="Delete" ><%= link_to '', url, 
 	  			    						method: :delete, data: { confirm: 'Are you sure?' }, 
 	  			    						class: "glyphicon glyphicon-trash" %>
 	  			    			</h4>
 							</div>
-							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
 								<a href="<%= detailshow_path(url.random_id) %>">
 									<h4 data-toggle="tooltip" data-placement="top" title="Share"><span class="glyphicon glyphicon-share"></span></h4>
 								</a>
@@ -127,24 +91,6 @@
 		<% else %>
 		<% end %>
 	</div>
-</div>
-
-<div class="modal fade" id="More" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
 </div>
 
 <!-- Javascript -->
