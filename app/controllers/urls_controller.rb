@@ -28,7 +28,7 @@ class UrlsController < ApplicationController
 	end
 
 	def detailshow
-		if
+		if 
 			@url = Url.new
 			letters = [('0'..'9'), ('a'..'z')].map { |i| i.to_a }.flatten
 			@url.random_id = (0...6).map{ letters[rand(letters.length)] }.join
@@ -71,7 +71,7 @@ class UrlsController < ApplicationController
 		@url = Url.find(params[:id])
 		respond_to do |format|
 	      if @url.update(urls_params)
-	        format.html { redirect_to (:back), notice: 'Title was successfully changed.' }
+	        format.html { redirect_to detailshow_path(@url.random_id), notice: 'Title was successfully changed.' }
 	      else
 	        format.html { redirect_to (:back), notice: "Oops something went wrong" }
 	      end

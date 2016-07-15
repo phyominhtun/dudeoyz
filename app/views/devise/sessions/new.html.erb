@@ -1,26 +1,38 @@
+<div class="form-horizontal form_devise_login">
+  <%= render 'layouts/login_header' %>
+  <div class="container">
+    <div class="row jumbotron">
+      <div class="col-lg-3 col-md-3 hidden-sm hidden-xs"></div>
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <div class="form-group" id="login_form">
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <h3 id="center"><b>Login</b></h3><br>
 
-          <h3 id="center"><b>Login</b></h3><br>
-
-          <%= f.email_field :email, class: "form-control", 
-                placeholder: "Email Address", type: "email", autofocus: true %>
-              </br>
-          <%= f.password_field :password, :autocomplete => "off", type: "password",
-                                               class: "form-control", placeholder: "Password" %>
-          <label class="checkbox">
-              <span class="pull-right">
-                  <a href="#"> Forgot Password?</a>
-              </span>
-          </label>
-          <br>
-          <button class="btn btn-greenish btn-block" 
-                  type="f.submit"><i class="glyphicon glyphicon-log-in"></i><b> SIGN IN</b></button>
-          <hr>
-          <div id="center">
-              Don't have an account yet?<br/>
-              <a class="" href="<%= signup_path %>">
-                  Create an account
-              </a>
+            <%= f.email_field :email, class: "form-control", 
+                  placeholder: "Email Address", type: "email", autofocus: true %>
+                </br>
+            <%= f.password_field :password, :autocomplete => "off", type: "password",
+                                                 class: "form-control", placeholder: "Password" %>
+            <label class="checkbox">
+                <span class="pull-right">
+                    <a href="#"> Forgot Password?</a>
+                </span>
+            </label>
+            <br>
+            <button class="btn btn-greenish btn-block" 
+                    type="f.submit"><i class="glyphicon glyphicon-log-in"></i><b> SIGN IN</b></button>
+            <hr>
+            <div id="center">
+                Don't have an account yet?<br/>
+                <a class="" href="<%= signup_path %>">
+                    Create an account
+                </a>
+            </div>
+          <% end %>
           </div>
-        <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
