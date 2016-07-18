@@ -7,14 +7,6 @@ class ApplicationController < ActionController::Base
 
 	protected
 
-	# def after_sign_out_path_for(resource)
-	# about_path
-	# end
-
-	#def after_new_registrations_path_for(resource)
-	#usersettings_path
-	#end
-
 	def configure_permitted_parameters
 		devise_parameter_sanitizer.for(:sign_up) << :name
 	    devise_parameter_sanitizer.for(:account_update) << :name
@@ -26,5 +18,13 @@ class ApplicationController < ActionController::Base
 	    devise_parameter_sanitizer.for(:account_update) << :title
 	    devise_parameter_sanitizer.for(:account_update) << :role
 	    devise_parameter_sanitizer.for(:sign_up) << :role
+	end
+
+	def after_sign_out_path_for(resource)
+		about_path
+	end
+
+	def after_sign_up_path_for(resource)
+		edit_user_registration_path
 	end
 end
