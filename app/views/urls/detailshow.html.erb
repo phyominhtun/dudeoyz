@@ -23,23 +23,23 @@
 			</div>
 			<table class="table table-bordered">
 				<tr>
-					<th>Id</th>
-					<th>Name</th>
-					<th>Username</th>
-					<th>Email</th>
-					<th>City</th>
+					<th>OS</th>
+					<th>Browser</th>
+					<th>Time Ago</th>
+					<th>Country</th>
+					<th>Devise</th>
 				</tr>
 			<% @detail.order("started_at DESC").limit(nil).each do |d| %>
 				<tr>
 					<td><%= d.os %></td>
 					<td><%= d.browser %></td>
 					<td><%= time_ago_in_words(d.started_at) %></td>
-					<td><%= d.landing_page %></td>
-					<% if d.city === nil %>
+					<% if d.country === nil %>
 						<td>unknown</td>
 					<% else %>
-						<td><%= d.city %></td>
+						<td><%= d.country %></td>
 					<% end %>
+					<td><%= d.devise_type %></td>
 				</tr>
 			<% end %>
 			</table>
