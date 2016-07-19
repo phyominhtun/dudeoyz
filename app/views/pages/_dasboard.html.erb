@@ -15,8 +15,13 @@
 					<div class="col-lg-4 col-md-3 col-sm-4 col-xs-4"></div>
 				</div>
 				<hr>
+				<% if current_user.name != nil %>
+					<%= current_user.name %>
+				<% else %>
+					Oyz Doe
+				<% end %>
 				AccoutCreated- <b><%= time_ago_in_words(current_user.created_at) %></br>
-				<a href="#">Settings <span class="glyphicon glyphicon-cog"></span></a>
+				<a href="<%= edit_user_registration_path %>">Settings <span class="glyphicon glyphicon-cog"></span></a>
 				<hr>
 				<div class="progress">
 				  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="<%= @urlprogressbar %>" aria-valuemin="0" aria-valuemax="100" 

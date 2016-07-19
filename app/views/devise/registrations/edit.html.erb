@@ -13,26 +13,6 @@
     <%= f.text_field :name %>
   </div>
 
-  <div class="field">
-    <%= f.label :role %><br />
-    <%= f.text_field :role %>
-  </div>
-
-  <div class="field">
-    <%= f.label :about %><br />
-    <%= f.text_field :about %>
-  </div>
-
-  <div class="field">
-    <%= f.label :company_name %><br />
-    <%= f.text_field :company_name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
