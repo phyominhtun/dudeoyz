@@ -15,6 +15,23 @@
 					<div class="col-lg-4 col-md-3 col-sm-4 col-xs-4"></div>
 				</div>
 				<hr>
+				<!-- <% if current_user.name === nil %>
+					<b>Oyz Doe</b>
+				<% else %>
+					<b><%= current_user.name %></b>
+				<% end %>
+				<% if current_user.role === nil %>
+					<span class="label label-success">Well</span>
+				<% else %>
+					<span class="label label-success"><%= current_user.role %></span>
+				<% end %>
+				<hr>
+				<% if current_user.company_name != nil %>
+					Company- <b><%= current_user.company_name %></b><br>
+				<% end %>
+				<% if current_user.company_name != nil %>
+					Title- <b><%= current_user.title %></b><br>
+				<% end %> -->
 				AccoutCreated- <b><%= time_ago_in_words(current_user.created_at) %></br>
 				<a href="#">Settings <span class="glyphicon glyphicon-cog"></span></a>
 				<hr>
