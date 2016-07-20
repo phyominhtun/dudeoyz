@@ -5,6 +5,7 @@
       <div class="col-lg-3 col-md-3 hidden-sm hidden-xs"></div>
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
         <div class="form-group" id="login_form">
+          <%= render 'layouts/noti' %>
           <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
             <h3 id="center"><b>Login</b></h3><br>
