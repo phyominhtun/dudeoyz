@@ -24,6 +24,10 @@
 				    <span class="sr-only"><%= @urlprogressbar %> Complete (success)</span>
 				  </div>
 				</div>
+				<% if user_signed_in? %>
+					<h4><%= current_user.name %></h4>
+					<h4><%= current_user.website %></h4>
+				<% end %>
 				<h6>URL <%= @urluser.count %> already been used</h6>
 				</div>
 			</div>

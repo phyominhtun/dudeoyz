@@ -42,6 +42,45 @@
 					<td><%= d.device_type %></td>
 				</tr>
 			<% end %>
+			<% @detail2.order("started_at DESC").limit(nil).each do |d| %>
+				<tr>
+					<td><%= d.os %></td>
+					<td><%= d.browser %></td>
+					<td><%= time_ago_in_words(d.started_at) %></td>
+					<% if d.country === nil %>
+						<td>unknown</td>
+					<% else %>
+						<td><%= d.country %></td>
+					<% end %>
+					<td><%= d.device_type %></td>
+				</tr>
+			<% end %>
+			<% @detail3.order("started_at DESC").limit(nil).each do |d| %>
+				<tr>
+					<td><%= d.os %></td>
+					<td><%= d.browser %></td>
+					<td><%= time_ago_in_words(d.started_at) %></td>
+					<% if d.country === nil %>
+						<td>unknown</td>
+					<% else %>
+						<td><%= d.country %></td>
+					<% end %>
+					<td><%= d.device_type %></td>
+				</tr>
+			<% end %>
+			<% @d.order("started_at DESC").limit(nil).each do |d| %>
+				<tr>
+					<td><%= d.os %></td>
+					<td><%= d.browser %></td>
+					<td><%= time_ago_in_words(d.started_at) %></td>
+					<% if d.country === nil %>
+						<td>unknown</td>
+					<% else %>
+						<td><%= d.country %></td>
+					<% end %>
+					<td><%= d.device_type %></td>
+				</tr>
+			<% end %>
 			</table>
 
 			
