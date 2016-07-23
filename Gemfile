@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 ruby '2.1.5'
 
-gem 'rest-client'
+
 gem 'chartkick', '~> 1.2.4'
 gem 'active_median', '~> 0.1.0'
 gem 'dateslices'
