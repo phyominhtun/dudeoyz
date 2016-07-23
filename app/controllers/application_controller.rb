@@ -2,6 +2,13 @@ class ApplicationController < ActionController::Base
 	# Prevent CSRF attacks by raising an exception.
 	# For APIs, you may want to use :null_session instead.
 	protect_from_forgery with: :exception
+
+	@ip = get_ip
+
+	def get_ip
+		res = RestClient.get("http://52.86.18.14")
+	  	JSON.parse(res)["52.86.18.14"]
+	end
 	before_action :configure_permitted_parameters, if: :devise_controller?
 
 	protected
