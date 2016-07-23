@@ -11,13 +11,13 @@
             <h3 id="center"><b>Login</b></h3><br>
 
             <%= f.email_field :email, class: "form-control", 
-                  placeholder: "Email Address", type: "email", autofocus: true %>
+                  placeholder: "Email Address", type: "email" %>
                 </br>
             <%= f.password_field :password, :autocomplete => "off", type: "password",
                                                  class: "form-control", placeholder: "Password" %>
             <label class="checkbox">
                 <span class="pull-right">
-                    <a href="#"> Forgot Password?</a>
+                    <a href="#" data-toggle="modal" data-target="#wel"> Forgot Password?</a>
                 </span>
             </label>
             <br>
@@ -35,5 +35,37 @@
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade modal_dashboard" id="wel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document" id="center">
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Forgot your password?</h4>
+        </div>
+        <div class="modal-body">
+          <div class="form-inline">
+            <div class="form-group">
+              <%= f.email_field :email, class: "form-control", 
+                          placeholder: "Email Address", type: "email" %>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+              <button type="f.button" class="btn btn-block btn-greenish">Mail Me Now!</button>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+              <button type="button" class="btn btn-block btn-redish" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>

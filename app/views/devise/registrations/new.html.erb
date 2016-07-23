@@ -11,7 +11,13 @@
           <h3 id="center"><b>Sign up today</b></h3><br>
 
           <%= f.email_field :email, class: "form-control", 
-                placeholder: "Email Address", type: "email", autofocus: true %>
+                placeholder: "Email Address", type: "text" %>
+              </br>
+          <%= f.text_field :name, class: "form-control", 
+                placeholder: "Oyz Doe", type: "text" %>
+              </br>
+          <%= f.text_field :website, class: "form-control", 
+                placeholder: "https://website.com", type: "text" %>
               </br>
           <%= f.password_field :password, :autocomplete => "off", type: "password",
                                                class: "form-control", placeholder: "Password" %>
