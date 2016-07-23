@@ -10,13 +10,30 @@
 				<div class="row">
 					<div class="col-lg-4 col-md-3 col-sm-4 col-xs-4"></div>
 					<div class="col-lg-4 col-md-6 col-sm-4 col-xs-4">
-						<img src="<%= asset_path 'user1.jpg' %>" id="dashboard_profile_pic" class="img-circle img-responsive" alt="Responsive image">
+						<img src="<%= asset_path 'user1.jpg' %>" id="dashboard_profile_pic" class="img-oyz img-responsive" alt="Responsive image">
 					</div>
 					<div class="col-lg-4 col-md-3 col-sm-4 col-xs-4"></div>
 				</div>
 				<hr>
+				<% if current_user.name === nil %>
+					Name - <b>Oyz Doe</b></br>
+				<% else %>
+					Name - <b><%= current_user.name %></b></br>
+				<% end %>
+				<% if current_user.company_name === nil %>
+					<!-- -->
+				<% else %>
+					Company - <b><%= current_user.company_name %></b></br>
+				<% end %>
+				<% if current_user.title === nil %>
+					<!-- -->
+				<% else %>
+					Title - <b><%= current_user.title %></b></br>
+				<% end %>
+				<hr>
+				LogIn Counter - <b><%= current_user.sign_in_count %></b></br>
 				AccoutCreated- <b><%= time_ago_in_words(current_user.created_at) %></br>
-				<a href="#">Settings <span class="glyphicon glyphicon-cog"></span></a>
+				<a href="<%= edit_user_registration_path %>">Account Settings <span class="glyphicon glyphicon-cog"></span></a>
 				<hr>
 				<div class="progress">
 				  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="<%= @urlprogressbar %>" aria-valuemin="0" aria-valuemax="100" 
