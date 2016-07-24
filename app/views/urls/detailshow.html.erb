@@ -14,76 +14,63 @@
 			  		<h1><b><%= @visit.title %></b><br>
 			  	<% end %>
 			  	<small>
-			  		<a href="<%= urlshow_path(@visit.random_id) %>" id="lii">Oyz.KR/<%= @visit.random_id %></a>
-			  	</small> <span class="badge"><%= @detail.count %></span>
+			  		<a href="<%= urlshow_path(@visit.random_id) %>" id="lii">oyz.kr/<%= @visit.random_id %></a>
+			  	</small> <span class="badge"><%= @detail2.count %></span>
 			  	<a href="#" class="badge"  data-toggle="modal" data-target="#edit">
 			  		<span class="glyphicon glyphicon-edit"></span>
 			  	</a>
+			  	<br>
+			  	<h6><%= @visit.original %></h6>
 			  </h1>
 			</div>
-			<table class="table table-bordered">
-				<tr>
-					<th>OS</th>
-					<th>Browser</th>
-					<th>Time Ago</th>
-					<th>Country</th>
-					<th>Devise</th>
-				</tr>
-			<% @detail.order("started_at DESC").limit(nil).each do |d| %>
-				<tr>
-					<td><%= d.os %></td>
-					<td><%= d.browser %></td>
-					<td><%= time_ago_in_words(d.started_at) %></td>
-					<% if d.country === nil %>
-						<td>unknown</td>
-					<% else %>
-						<td><%= d.country %></td>
-					<% end %>
-					<td><%= d.device_type %></td>
-				</tr>
-			<% end %>
-			<% @detail2.order("started_at DESC").limit(nil).each do |d| %>
-				<tr>
-					<td><%= d.os %></td>
-					<td><%= d.browser %></td>
-					<td><%= time_ago_in_words(d.started_at) %></td>
-					<% if d.country === nil %>
-						<td>unknown</td>
-					<% else %>
-						<td><%= d.country %></td>
-					<% end %>
-					<td><%= d.device_type %></td>
-				</tr>
-			<% end %>
-			<% @detail3.order("started_at DESC").limit(nil).each do |d| %>
-				<tr>
-					<td><%= d.os %></td>
-					<td><%= d.browser %></td>
-					<td><%= time_ago_in_words(d.started_at) %></td>
-					<% if d.country === nil %>
-						<td>unknown</td>
-					<% else %>
-						<td><%= d.country %></td>
-					<% end %>
-					<td><%= d.device_type %></td>
-				</tr>
-			<% end %>
-			<% @d.order("started_at DESC").limit(nil).each do |d| %>
-				<tr>
-					<td><%= d.os %></td>
-					<td><%= d.browser %></td>
-					<td><%= time_ago_in_words(d.started_at) %></td>
-					<% if d.country === nil %>
-						<td>unknown</td>
-					<% else %>
-						<td><%= d.country %></td>
-					<% end %>
-					<td><%= d.device_type %></td>
-				</tr>
-			<% end %>
-			</table>
 
-			
+			<% if @detail2.count > 0 %>
+
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="jumbotron" id="center">
+						<h3>
+							Last Visit was 
+							<small><%= time_ago_in_words(@detail2.last.started_at) %></small>
+						</h3>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="jumbotron">
+						<h4 id="center">Referring-Domain</h4>
+						<%= pie_chart @detail2.group(:referring_domain).count, 
+									library: {backgroundColor: "#8defca"} %>
+					</div>
+				</div>
+
+				<div class="col-lg-6">
+					<div class="jumbotron">
+						<h4 id="center">Browser</h4>
+						<%= pie_chart @detail2.group(:browser).count, 
+									library: {backgroundColor: "#8defca"} %>
+					</div>
+				</div>
+
+				<div class="col-lg-6">
+					<div class="jumbotron">
+						<h4 id="center">Country</h4>
+						<%= pie_chart @detail2.group(:country).count, 
+									library: {backgroundColor: "#8defca"} %>
+					</div>
+				</div>
+
+				<div class="col-lg-6">
+					<div class="jumbotron">
+						<h4 id="center">Device</h4>
+						<%= pie_chart @detail2.group(:device_type).count, 
+									library: {backgroundColor: "#8defca"} %>
+					</div>
+				</div>
+			</div>
+
+			<% else %>
+				<h4>Oops</h4>
+			<% end %>
 				  
 			<!-- <div class="row">
 				<div class="col-lg-5">

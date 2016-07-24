@@ -1,0 +1,16 @@
+<%= simple_form_for(@support) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+  	<% if user_signed_in? %>
+  		<!-- something -->
+  	<% else %>
+    	<%= f.input :email %>
+    <% end %>
+    <%= f.input :description %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

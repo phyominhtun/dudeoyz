@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :supports
+
   get 'admin/index', as: :admin
 
   devise_for :users
