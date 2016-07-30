@@ -239,6 +239,17 @@ body {
 	background: #252830;
 	color: white;
 
+	.modal_dashboard {
+		.modal-title {
+			color: black;
+			text-align: center;
+		}
+		.form-control {
+			background-color: white;
+			color: black;
+		}
+	}
+
 	.form-control {
 		background: #27263A;
 		color: white;

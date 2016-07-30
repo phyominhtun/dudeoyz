@@ -34,7 +34,12 @@ class SupportsController < ApplicationController
         format.html { redirect_to (:back), notice: 'Support was successfully created.' }
         format.json { render :show, status: :created, location: @support }
       else
-        format.html { redirect_to (:back) }
+        format.html { redirect_to (:back),
+                    alert: %Q[
+                                Bummer !</br>
+                                Email &amp; Question Can't Be Empty
+                              ],
+                    flash: { html_safe: true } }
         format.json { render json: @support.errors, status: :unprocessable_entity }
       end
     end

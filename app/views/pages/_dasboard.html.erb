@@ -17,19 +17,29 @@
 				<hr>
 				<% if current_user.name === nil %>
 					Name - <b>Oyz Doe</b></br>
+				<% elsif current_user.name === "" %>
+					<!-- -->
 				<% else %>
 					Name - <b><%= current_user.name %></b></br>
 				<% end %>
+
 				<% if current_user.company_name === nil %>
 					<!-- -->
+				<% elsif current_user.company_name === "" %>
+					<!-- -->
 				<% else %>
+
 					Company - <b><%= current_user.company_name %></b></br>
 				<% end %>
+
 				<% if current_user.title === nil %>
+					<!-- -->
+				<% elsif current_user.title === "" %>
 					<!-- -->
 				<% else %>
 					Title - <b><%= current_user.title %></b></br>
 				<% end %>
+
 				<hr>
 				LogIn Counter - <b><%= current_user.sign_in_count %></b></br>
 				AccoutCreated- <b><%= time_ago_in_words(current_user.created_at) %></br>
