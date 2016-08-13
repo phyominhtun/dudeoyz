@@ -40,6 +40,8 @@
 					Title - <b><%= current_user.title %></b></br>
 				<% end %>
 
+				<span class="label label-warning" id="beta_title">Pro</span>
+
 				<hr>
 				LogIn Counter - <b><%= current_user.sign_in_count %></b></br>
 				AccoutCreated- <b><%= time_ago_in_words(current_user.created_at) %></br>
