@@ -10,6 +10,8 @@
 			<div class="page-header" id="center">
 				<% if @visit.title === nil %>
 			  		<h1><<span>/<b>O</b></span>><br>
+			  	<% elsif @visit.title === "" %>
+			  		<h1><<span>/<b>O</b></span>><br>
 			  	<% else %>
 			  		<h1><b><%= @visit.title %></b><br>
 			  	<% end %>

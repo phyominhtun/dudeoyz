@@ -9,13 +9,18 @@
       <div class="modal-body">
         <%= form_for(Support.new) do |f| %>
           <div class="form-group">
+            <% if user_signed_in? %>
+              <!-- -->
+            <% else %>
+              <%= f.text_field :email, class: "form-control", placeholder: "Email Address" %><br>
+            <% end %>
             <%= f.text_area :description, class: "form-control", placeholder: "Write Your Question Here!" %>
           </div>
       </div>
       <div class="modal-footer">
         <div class="row">
           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-            <button type="f.button" class="btn btn-block btn-greenish">Submit</button>
+            <%= f.submit "Submit", class: "btn btn-block btn-greenish" %>
           </div>
           <% end %>
           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">

@@ -98,7 +98,15 @@ body {
 	}
 }
 
+.user_edit {
+	background-color: #252830;
+	color: white;
 
+	.user_edit_jumbotron {
+		background: -webkit-linear-gradient(#252830, #3A344F, #2F3655);
+		max-width: 70%;
+	}
+}
 
 
 /* Dashboard End */

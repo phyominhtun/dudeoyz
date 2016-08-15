@@ -18,7 +18,7 @@
 				<% if current_user.name === nil %>
 					Name - <b>Oyz Doe</b></br>
 				<% elsif current_user.name === "" %>
-					<!-- -->
+					Name - <b>Oyz Doe</b></br>
 				<% else %>
 					Name - <b><%= current_user.name %></b></br>
 				<% end %>
@@ -40,7 +40,7 @@
 					Title - <b><%= current_user.title %></b></br>
 				<% end %>
 
-				<span class="label label-warning" id="beta_title">Pro</span>
+				<span class="label label-success" id="beta_title">Beta User</span>
 
 				<hr>
 				LogIn Counter - <b><%= current_user.sign_in_count %></b></br>
@@ -64,6 +64,8 @@
 				<div class="col-lg-4 col-md-4 col-sm-6">
 					<div class="jumbotron">
 						<% if url.title === nil %>
+							<h3><<span>/<b>O</b></span>></h3><br>
+						<% elsif url.title === "" %>
 							<h3><<span>/<b>O</b></span>></h3><br>
 						<% else %>
 							<h3><%= url.title %></h3><br>

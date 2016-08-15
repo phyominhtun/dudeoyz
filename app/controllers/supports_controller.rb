@@ -31,7 +31,7 @@ class SupportsController < ApplicationController
 
     respond_to do |format|
       if @support.save
-        format.html { redirect_to (:back), notice: 'Support was successfully created.' }
+        format.html { redirect_to (:back), notice: "We'll get back to you as soon as possible." }
         format.json { render :show, status: :created, location: @support }
       else
         format.html { redirect_to (:back),
