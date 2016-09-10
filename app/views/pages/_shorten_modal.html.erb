@@ -1,3 +1,9 @@
+<!-- AGRT for URL -->
+<% @url = Url.new %>
+<% letters = [(0..9), ('a'..'z')].map { |i| i.to_a }.flatten %>
+<% @url.random_id = (0...6).map{ letters[rand(letters.length)] }.join %>
+<!-- end -->
+
 <!-- Modal -->
 <div class="modal fade modal_dashboard" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
