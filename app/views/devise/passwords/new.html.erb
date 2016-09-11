@@ -1,16 +1,32 @@
-<h2>Forgot your password?</h2>
+<div class="form-horizontal form_devise_login">
+	<%= render 'layouts/login_header' %>
+	<div class="container">
+		<br><br>
+		<div class="row">
+			<div class="col-lg-3 col-md-3 hidden-sm hidden-xs"></div>
+			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+				<div class="form-group" id="login_form">
+					<%= form_for(resource, as: resource_name, url: password_path(resource_name), 
+															html: { method: :post }) do |f| %>
+					<%= devise_error_messages! %>
+					<%= render 'layouts/noti' %>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
+						<h3 id="center"><b>Forgot your password?</b></h3><br>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+						<%= f.email_field :email, class: "form-control", 
+						placeholder: "Email Address", type: "email" %>
+						<hr>
+						<button class="btn btn-greenish btn-block" 
+						type="f.submit"><i class="glyphicon glyphicon-record"></i><b> Mail Me Now! </B></button>
 
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+					<% end %>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-3 hidden-sm hidden-xs"></div>
+		</div>
+		<br>
+		<div class="page_more_2">
+			<%= render 'layouts/footer' %>
+		</div>
+	</div>
+</div>

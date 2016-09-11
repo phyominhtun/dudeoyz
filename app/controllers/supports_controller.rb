@@ -31,13 +31,13 @@ class SupportsController < ApplicationController
 
     respond_to do |format|
       if @support.save
-        format.html { redirect_to (:back), notice: "We'll get back to you as soon as possible." }
+        format.html { redirect_to (root_path), notice: "Thanks... We'll get back to you as soon as possible." }
         format.json { render :show, status: :created, location: @support }
       else
-        format.html { redirect_to (:back),
+        format.html { redirect_to (root_path),
                     alert: %Q[
                                 Bummer !</br>
-                                Email &amp; Question Can't Be Empty
+                                Email or Question Can't Be Empty
                               ],
                     flash: { html_safe: true } }
         format.json { render json: @support.errors, status: :unprocessable_entity }

@@ -66,7 +66,7 @@ class UrlsController < ApplicationController
     						flash: { html_safe: true }
   						)
 		else
-			redirect_to (:back), notice: "Oops something went wrong"
+			redirect_to (:back), alert: "Oops something went wrong"
 		end
 	end
 
