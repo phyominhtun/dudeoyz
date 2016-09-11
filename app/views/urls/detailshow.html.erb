@@ -17,7 +17,7 @@
 			  	<% end %>
 			  	<small>
 			  		<a href="<%= urlshow_path(@visit.random_id) %>" id="lii">oyz.kr/<%= @visit.random_id %></a>
-			  	</small> <span class="badge"><%= @detail2.count %></span>
+			  	</small> <span class="badge"><%= @well.count %></span>
 			  	<a href="#" class="badge"  data-toggle="modal" data-target="#edit">
 			  		<span class="glyphicon glyphicon-edit"></span>
 			  	</a>
@@ -26,21 +26,21 @@
 			  </h1>
 			</div>
 
-			<% if @detail2.count > 0 %>
+			<% if @well.count > 0 %>
 
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="jumbotron" id="center">
 						<h3>
 							Last Visit was 
-							<small><%= time_ago_in_words(@detail2.last.started_at) %></small>
+							<small><%= time_ago_in_words(@well.last.started_at) %></small>
 						</h3>
 					</div>
 				</div>
 				<div class="col-lg-6">
 					<div class="jumbotron">
 						<h4 id="center">Referring-Domain</h4>
-						<%= pie_chart @detail2.group(:referring_domain).count, 
+						<%= pie_chart @well.group(:referring_domain).count, 
 									library: {backgroundColor: "#8defca"} %>
 					</div>
 				</div>
@@ -48,7 +48,7 @@
 				<div class="col-lg-6">
 					<div class="jumbotron">
 						<h4 id="center">Browser</h4>
-						<%= pie_chart @detail2.group(:browser).count, 
+						<%= pie_chart @well.group(:browser).count, 
 									library: {backgroundColor: "#8defca"} %>
 					</div>
 				</div>
@@ -56,7 +56,7 @@
 				<div class="col-lg-6">
 					<div class="jumbotron">
 						<h4 id="center">Country</h4>
-						<%= pie_chart @detail2.group(:country).count, 
+						<%= pie_chart @well.group(:country).count, 
 									library: {backgroundColor: "#8defca"} %>
 					</div>
 				</div>
@@ -64,7 +64,7 @@
 				<div class="col-lg-6">
 					<div class="jumbotron">
 						<h4 id="center">Device</h4>
-						<%= pie_chart @detail2.group(:device_type).count, 
+						<%= pie_chart @well.group(:device_type).count, 
 									library: {backgroundColor: "#8defca"} %>
 					</div>
 				</div>

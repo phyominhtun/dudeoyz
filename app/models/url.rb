@@ -4,6 +4,7 @@ class Url < ActiveRecord::Base
 
 	validates	:random_id, 
 				:presence => true,
+				:uniqueness => true,
 				length: {
                     minimum: 6,
                     maximum: 15,

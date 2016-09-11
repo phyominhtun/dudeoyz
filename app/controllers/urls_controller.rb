@@ -38,6 +38,8 @@ class UrlsController < ApplicationController
 			@detail = Visit.where(landing_page: "http://oyz.herokuapp.com/" + params[:random_id])
 			@detail2 = Visit.where(landing_page: "http://www.oyz.kr/" + params[:random_id])
 			@detail3 = Visit.where(landing_page: "http://oyz.kr/" + params[:random_id])
+
+			@well = @detail2 + @d
 	    else
 	        redirect_to root_path,
 	        alert: 'Oops something went wrong'

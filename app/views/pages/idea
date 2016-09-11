@@ -1,0 +1,117 @@
+<div class="row" id="center">
+			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+				<div class="jumbotron jumbotron_tran">
+					<h2 id="center"><span class="glyphicon glyphicon-link"></span></h2>
+					<h3>SHORTEN</h3>
+					<hr>
+					<p id="center">Links are long. Most of people don't like it. So here at Oyz.KR you can shorten them for FREE.</p>
+				</div>
+			</div>
+			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+				<div class="jumbotron jumbotron_tran">
+					<h2 id="center"><span class="glyphicon glyphicon-stats"></span></h2>
+					<h3>Analysis &amp; Mesure</h3>
+					<hr>
+					<p id="center">Whether you are a marketer, blogger or anybody. With our simple to use tools you can Analysis &amp; Mesure 24/7.</p>
+				</div>
+			</div>
+			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+				<div class="jumbotron jumbotron_tran">
+					<h2 id="center"><span class="glyphicon glyphicon-flash"></span></h2>
+					<h3>UpTime</h3>
+					<hr>
+					<p id="center">Our servers are 96.7% uptime guranteed. So whoever or whenever people click your link it will redirect to your link faster.</p>
+				</div>
+			</div>
+			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+				<div class="jumbotron jumbotron_tran">
+					<h2 id="center"><span class="glyphicon glyphicon-lock"></span></h2>
+					<h3>SECURITY</h3>
+					<hr>
+					<p id="center">We're a dedicated shorten URL company. We use SSL encrpytion. And we make sure every LINK &amp; ACCOUNT is secure.
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="row" id="center">
+			
+		</div>
+
+		<hr>
+
+		<div class="jumbotron jumbotron_tran">
+			<div class="row" id="center">
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-2"></div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-8">
+					<div class="row">
+						<div class="col-lg-1"></div>
+						<div class="col-lg-10" id="jumbotron_counter">
+							<h2 id="landing_page_counter"><%= Url.count + 300 %></h2>
+							<h4>Links Shortened</h4>
+						</div>
+						<div class="col-lg-1"></div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-2"></div>
+			</div>
+		</div> 
+
+		<hr>
+
+		<div class="jumbotron jumbotron_tran">
+			<h2 id="center">F.A.Q</h2>
+			<div class="row">
+				<div class="col-lg-3">
+					<h4><b>Q.</b>What's your name</h4>
+					<h5><b>A.</b> Lorem ipsum dolor sit amet, in mea nonumes dissentias dissentiunt, pro te solet oratio iriure. Cu sit consetetur moderatius intellegam, ius decore accusamus te. Ne primis suavitate disputando nam. Mutat convenirete.</h5>
+				</div>
+				<div class="col-lg-3">
+					<h4><b>Q.</b>What's your name</h4>
+					<h5><b>A.</b> Lorem ipsum dolor sit amet, in mea nonumes dissentias dissentiunt, pro te solet oratio iriure. Cu sit consetetur moderatius intellegam, ius decore accusamus te. Ne primis suavitate disputando nam. Mutat convenirete.</h5>
+				</div>
+				<div class="col-lg-3">
+					<h4><b>Q.</b>What's your name</h4>
+					<h5><b>A.</b> Lorem ipsum dolor sit amet, in mea nonumes dissentias dissentiunt, pro te solet oratio iriure. Cu sit consetetur moderatius intellegam, ius decore accusamus te. Ne primis suavitate disputando nam. Mutat convenirete.</h5>
+				</div>
+				<div class="col-lg-3">
+					<h4><b>Q.</b>What's your name</h4>
+					<h5><b>A.</b> Lorem ipsum dolor sit amet, in mea nonumes dissentias dissentiunt, pro te solet oratio iriure. Cu sit consetetur moderatius intellegam, ius decore accusamus te. Ne primis suavitate disputando nam. Mutat convenirete.</h5>
+				</div>
+			</div>
+		</div>
+
+		<hr>
+
+
+		<div class="jumbotron jumbotron_tran">
+			<div class="row">
+				<div class="col-lg-6 col-md-6">
+					<p id="center">
+						<span id="landing_footer_logo"><<span>/<b>O</b></span>></span><span class="landing_footer_text">Oyz.KR</span>
+					</p>
+					<p>
+						Lorem ipsum dolor sit amet, in mea nonumes dissentias dissentiunt, pro te solet oratio iriure. Cu sit consetetur moderatius intellegam, ius decore accusamus te. Ne primis suavitate disputando nam. Mutat convenirete.
+					</p>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-6" id="footer_company">
+					<h4><b>Company</b></h4>
+					<br>
+					<ul>
+					  <li><a href="<%= about_path %>">About Us</a></li>
+					  <li><a href="#">Contant Us</a></li>
+					  <li><a href="#">Features</a></li>
+					  <li><a href="#">Blog</a></li>
+					</ul>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-6" id="footer_company">
+					<h4><b>Support</b></h4>
+					<br>
+					<ul>
+					  <li><a href="#">Help &amp; Support</a></li>
+					  <li><a href="#">Terms &amp; Conditions</a></li>
+					  <li><a href="#">Privacy Policy</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<hr>
