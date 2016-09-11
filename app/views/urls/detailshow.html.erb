@@ -26,65 +26,7 @@
 			  </h1>
 			</div>
 
-			<% if @well.count > 0 %>
-
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="jumbotron" id="center">
-						<h3>
-							Last Visit was 
-							<small><%= time_ago_in_words(@well.last.started_at) %></small>
-						</h3>
-					</div>
-				</div>
-				<div class="col-lg-6">
-					<div class="jumbotron">
-						<h4 id="center">Referring-Domain</h4>
-						<%= pie_chart @well.group(:referring_domain).count, 
-									library: {backgroundColor: "#8defca"} %>
-					</div>
-				</div>
-
-				<div class="col-lg-6">
-					<div class="jumbotron">
-						<h4 id="center">Browser</h4>
-						<%= pie_chart @well.group(:browser).count, 
-									library: {backgroundColor: "#8defca"} %>
-					</div>
-				</div>
-
-				<div class="col-lg-6">
-					<div class="jumbotron">
-						<h4 id="center">Country</h4>
-						<%= pie_chart @well.group(:country).count, 
-									library: {backgroundColor: "#8defca"} %>
-					</div>
-				</div>
-
-				<div class="col-lg-6">
-					<div class="jumbotron">
-						<h4 id="center">Device</h4>
-						<%= pie_chart @well.group(:device_type).count, 
-									library: {backgroundColor: "#8defca"} %>
-					</div>
-				</div>
-			</div>
-
-			<% else %>
-				<h4>Oops</h4>
-			<% end %>
-				  
-			<!-- <div class="row">
-				<div class="col-lg-5">
-					<%= column_chart @detail.group_by_hour_of_day(:started_at), colors: ["red"] %>
-				</div>
-				<div class="col-lg-2"></div>
-				<div class="col-lg-5">
-					<%= pie_chart @detail.group(:browser).limit(1).count %>
-				</div>
-			</div>
-				<hr>
-				<%= geo_chart @detail.group(:country).count %> --> 
+			
 		</div>
 		<div class="page_more">
 		</div>
