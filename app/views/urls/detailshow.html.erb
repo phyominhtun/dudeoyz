@@ -28,9 +28,28 @@
 
 			<% if @well.count > 0 %>
 
-			<% @well.each do |w| %>
-				<%= w.browser %>
+			<table class="table table-bordered">
+				<tr>
+					<th>OS</th>
+					<th>Browser</th>
+					<th>Time Ago</th>
+					<th>Country</th>
+					<th>Devise</th>
+				</tr>
+			<% @well.each do |d| %>
+				<tr>
+					<td><%= d.os %></td>
+					<td><%= d.browser %></td>
+					<td><%= time_ago_in_words(d.started_at) %></td>
+					<% if d.country === nil %>
+						<td>unknown</td>
+					<% else %>
+						<td><%= d.country %></td>
+					<% end %>
+					<td><%= d.device_type %></td>
+				</tr>
 			<% end %>
+			</table>
 
 			<% else %>
 				<h4>Oops</h4>
