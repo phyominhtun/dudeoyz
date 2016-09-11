@@ -28,39 +28,9 @@
 
 			<% if @well.count > 0 %>
 
-			<div class="row">
-				<div class="col-lg-6">
-					<div class="jumbotron">
-						<h4 id="center">Referring-Domain</h4>
-						<%= pie_chart @well.group(:referring_domain).count, 
-									library: {backgroundColor: "#8defca"} %>
-					</div>
-				</div>
-
-				<div class="col-lg-6">
-					<div class="jumbotron">
-						<h4 id="center">Browser</h4>
-						<%= pie_chart @well.group(:browser).count, 
-									library: {backgroundColor: "#8defca"} %>
-					</div>
-				</div>
-
-				<div class="col-lg-6">
-					<div class="jumbotron">
-						<h4 id="center">Country</h4>
-						<%= pie_chart @well.group(:country).count, 
-									library: {backgroundColor: "#8defca"} %>
-					</div>
-				</div>
-
-				<div class="col-lg-6">
-					<div class="jumbotron">
-						<h4 id="center">Device</h4>
-						<%= pie_chart @well.group(:device_type).count, 
-									library: {backgroundColor: "#8defca"} %>
-					</div>
-				</div>
-			</div>
+			<% @well.each do |w| %>
+				<%= w.browser.count %>
+			<% end %>
 
 			<% else %>
 				<h4>Oops</h4>
