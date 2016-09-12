@@ -39,7 +39,7 @@ class UrlsController < ApplicationController
 			@detail2 = Visit.where(landing_page: "http://www.oyz.kr/" + params[:random_id])
 			@detail3 = Visit.where(landing_page: "http://oyz.kr/" + params[:random_id])
 
-			@well = @detail2 + @detail + @d
+			@well = @d + @detail + @detail2 + @detail3
 			@browser = @well.group_by(&:browser).count
 			@country = @well.group_by(&:country).count
 	    else
@@ -64,9 +64,9 @@ class UrlsController < ApplicationController
 			redirect_to( 
 							(:back), 
 							notice: %Q[Your link has been shorten</br>
-										#{view_context.link_to("http://localhost:3000/#{@url.random_id}", 
+										#{view_context.link_to("http://oyz.kr/#{@url.random_id}", 
 											urlshow_path(@url.random_id))}</br> 
-										#{view_context.link_to("Detail", detailshow_path(@url.random_id))}.],
+										#{view_context.link_to("Detail", "http://oyz.kr/" + (@url.random_id))}.],
     						flash: { html_safe: true }
   						)
 		else

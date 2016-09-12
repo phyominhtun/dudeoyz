@@ -1,0 +1,33 @@
+<div class="admin_page">	
+	<div class="container">
+		<ol class="breadcrumb">
+		  <li><a href="<%= root_path %>">Home</a></li>
+		  <li><a href="<%= admin_path %>">Admin</a></li>
+		  <li class="active">USER</li>
+		</ol>
+		<table class="table table-bordered container">
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Email</th>
+				<th>SignIn Counter</th>
+				<th>Created AT</th>
+				<th>URL Counter</th>
+				<th>Delete</th>
+			</tr>
+
+		<% @user.order("created_at DESC").each do |user| %>
+			<tr>
+				<td><%= user.id %></td>
+				<td><%= user.name %></td>
+				<td><%= user.email %></td>
+				<td><%= user.sign_in_count %></td>
+				<td><%= user.created_at %></td>
+				<td><%= Url.where(user_id: user.id).count %></td>
+				<td>Delete</td>
+			</tr>
+		<% end %>
+
+		</table>
+	</div>
+</div>

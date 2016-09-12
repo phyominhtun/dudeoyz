@@ -8,7 +8,7 @@
 /* used in most part end */
 
 body {
- 	background-color: #252830;
+ 	/* background-color: #252830; */
 }
 
 #myTAC {
@@ -29,6 +29,24 @@ body {
 }
 
 /* used in most part end */
+
+/* Admin Start */
+
+.admin_page {
+	padding-top: 20px;
+}
+
+.admin_counter_row {
+	.col-lg-4 {
+		padding: 10px;
+		border: 2px solid black;
+		a {
+			text-decoration: none;
+		}
+	}
+}
+
+/* Admin End */
 
 /* Dashboard Start */
 .dashboard {

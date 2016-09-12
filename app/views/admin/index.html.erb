@@ -1,20 +1,30 @@
-<h3><%= @visitcount %></h3>
-
-<table class="table table-bordered container">
-	<tr>
-		<th>Id</th>
-		<th>Visit Token</th>
-		<th>Landing Page</th>
-		<th>Time</th>
-	</tr>
-
-<% @visit.each do |visit| %>
-	<tr>
-		<td><%= visit.id %></td>
-		<td><%= visit.visitor_token %></td>
-		<td><%= visit.landing_page %></td>
-		<td><%= visit.started_at %></td>
-	</tr>
-<% end %>
-
-</table>
+<div class="admin_page">
+	<div class="container">
+		<ol class="breadcrumb">
+		  <li><a href="<%= root_path %>">Home</a></li>
+		  <li class="active">ADMIN</li>
+		</ol>
+		<div class="row admin_counter_row" id="center">
+			<div class="col-lg-6 col-md-6 col-xs-12">
+				<h2>VISIT</h2>
+				<hr>
+				<h4><a href="<%= admin_visit_path %>"><%= @visit.count %></a></h4>
+			</div>
+			<div class="col-lg-6 col-md-6 col-xs-12">
+				<h2>URL</h2>
+				<hr>
+				<h4><a href="<%= admin_url_path %>"><%= @url.count %></a></h4>
+			</div>
+			<div class="col-lg-6 col-md-6 col-xs-12">
+				<h2>USER</h2>
+				<hr>
+				<h4><a href="<%= admin_user_path %>"><%= @user.count %></a></h4>
+			</div>
+			<div class="col-lg-6 col-md-6 col-xs-12">
+				<h2>Support</h2>
+				<hr>
+				<h4><a href="<%= admin_url_path %>"><%= @support.count %></a></h4>
+			</div>
+		</div>
+	</div>
+</div>

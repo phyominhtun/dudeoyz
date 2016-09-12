@@ -1,0 +1,34 @@
+<div class="admin_page">	
+	<div class="container">
+		<ol class="breadcrumb">
+		  <li><a href="<%= root_path %>">Home</a></li>
+		  <li><a href="<%= admin_path %>">Admin</a></li>
+		  <li class="active">URL</li>
+		</ol>
+		<table class="table table-bordered container">
+			<tr>
+				<th>ID</th>
+				<th>Random ID</th>
+				<th>Link</th>
+				<th>User</th>
+				<th>Created AT</th>
+				<th>Visit Counter</th>
+				<th>Delete</th>
+			</tr>
+
+		<% @url.order("created_at DESC").each do |url| %>
+			<tr>
+				<td><%= url.id %></td>
+				<td><%= url.random_id %></td>
+				<td><%= url.original %></td>
+				<td><%= url.user_id %></td>
+				<td><%= url.created_at %></td>
+				<td><%= Visit.where(landing_page: "http://localhost:3000/" + url.random_id).count %></td>
+				<td><%= link_to 'Delete', url, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+				<!-- , class: "glyphicon glyphicon-trash" -->
+			</tr>
+		<% end %>
+
+		</table>
+	</div>
+</div>
