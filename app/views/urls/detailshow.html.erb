@@ -33,13 +33,13 @@
 
 			<div class="row" id="center">
 				<div class="col-lg-4">	
-					<%= pie_chart @well.group_by(&:browser).count %>
+					<%= @browser %>
 				</div>
 				<div class="col-lg-4">
-					<%= geo_chart @well.group_by(&:country).count %>
+					<%= @country %>
 				</div>
 				<div class="col-lg-4">
-					<%= pie_chart @well.group_by(&:os).count %>
+					<%= @os %>
 				</div>
 			</div>
 
