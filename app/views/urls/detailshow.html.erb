@@ -27,9 +27,23 @@
 			</div>
 
 			<% if @well.count > 0 %>
+			<%= time_ago_in_words(@well.last.started_at) %>
 
-			<%= @browser %>
-			<%= @country %>
+			<hr>
+
+			<div class="row" id="center">
+				<div class="col-lg-4">	
+					<%= geo_chart @well.group_by(&:browser).count %>
+				</div>
+				<div class="col-lg-4">
+					<%= geo_chart @well.group_by(&:country).count %>
+				</div>
+				<div class="col-lg-4">
+					<%= geo_chart @well.group_by(&:os).count %>
+				</div>
+			</div>
+
+			<hr>
 
 			<table class="table table-bordered">
 				<tr>
@@ -57,6 +71,17 @@
 			<% else %>
 				<h4>Oops</h4>
 			<% end %>
+			<!-- <div class="row">
+				<div class="col-lg-5">
+					<%= column_chart @detail.group_by_hour_of_day(:started_at), colors: ["red"] %>
+				</div>
+				<div class="col-lg-2"></div>
+				<div class="col-lg-5">
+					<%= pie_chart @detail.group(:browser).limit(1).count %>
+				</div>
+			</div>
+				<hr>
+				<%= geo_chart @detail.group(:country).count %> --> 
 		</div>
 		<div class="page_more">
 		</div>
