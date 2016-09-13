@@ -41,7 +41,7 @@ class UrlsController < ApplicationController
 
 			@well = @d + @detail + @detail2 + @detail3
 			@browser = @well.group_by(&:browser).count
-			@country = geo_chart @well.group_by(&:country).count
+			@country = @well.group_by(&:country).count
 			@os = @well.group_by(&:os).count
 	    else
 	        redirect_to root_path,
