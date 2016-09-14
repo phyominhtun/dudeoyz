@@ -38,7 +38,7 @@
 					<th>Country</th>
 					<th>Devise</th>
 				</tr>
-			<% @well.order("started_at DESC").each do |d| %>
+			<% @well.sort_by(&:started_at).each do |d| %>
 				<tr>
 					<td><%= d.os %></td>
 					<td><%= d.browser %></td>
