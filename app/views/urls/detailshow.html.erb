@@ -17,7 +17,7 @@
 			  	<% end %>
 			  	<small>
 			  		<a href="<%= urlshow_path(@visit.random_id) %>" id="lii">oyz.kr/<%= @visit.random_id %></a>
-			  	</small> <span class="badge"><%= @well %></span>
+			  	</small> <span class="badge"><%= @well.count %></span>
 			  	<a href="#" class="badge"  data-toggle="modal" data-target="#edit">
 			  		<span class="glyphicon glyphicon-edit"></span>
 			  	</a>
@@ -26,14 +26,9 @@
 			  </h1>
 			</div>
 
-			<% if @well > 0 %>
+			<% if @well.count > 0 %>
 
-
-			<hr>
-
-			
-
-			<hr>
+			<%= @well.last.started_at %>
 
 			<table class="table table-bordered">
 				<tr>
@@ -43,7 +38,7 @@
 					<th>Country</th>
 					<th>Devise</th>
 				</tr>
-			<% @dude.each do |d| %>
+			<% @well.each do |d| %>
 				<tr>
 					<td><%= d.os %></td>
 					<td><%= d.browser %></td>
