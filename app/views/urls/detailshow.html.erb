@@ -28,7 +28,9 @@
 
 			<% if @well.count > 0 %>
 
-			<%= @wish.all %>
+			<% @wish.each do |d| %>
+				<%= d.browser %>
+			<% end %>
 
 			<%= @well.last.started_at %>
 
