@@ -28,7 +28,7 @@
 
 			<% if @well.count > 0 %>
 
-			<%= @wish.count %>
+			<%= @wish.group(:os).count %>
 
 			<%= @well.last.started_at %>
 
