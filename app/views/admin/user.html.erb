@@ -13,7 +13,6 @@
 				<th>SignIn Counter</th>
 				<th>Created AT</th>
 				<th>URL Counter</th>
-				<th>Delete</th>
 			</tr>
 
 		<% @user.order("created_at DESC").each do |user| %>
@@ -22,9 +21,8 @@
 				<td><%= user.name %></td>
 				<td><%= user.email %></td>
 				<td><%= user.sign_in_count %></td>
-				<td><%= user.created_at %></td>
+				<td><%= time_ago_in_words(user.created_at) %></td>
 				<td><%= Url.where(user_id: user.id).count %></td>
-				<td>Delete</td>
 			</tr>
 		<% end %>
 

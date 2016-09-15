@@ -39,7 +39,12 @@ class UrlsController < ApplicationController
 			@detail2 = Visit.where(landing_page: "http://www.oyz.kr/" + params[:random_id])
 			@detail3 = Visit.where(landing_page: "http://oyz.kr/" + params[:random_id])
 
-			@well = @d + @detail + @detail2
+			@well = (@d + @detail + @detail2).sort_by(&:started_at).reverse
+
+			
+				@wish = @d.group(:os).count
+			
+
 	    else
 	        redirect_to root_path,
 	        alert: 'Oops something went wrong'

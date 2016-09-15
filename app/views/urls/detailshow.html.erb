@@ -28,6 +28,8 @@
 
 			<% if @well.count > 0 %>
 
+			<%= @wish %>
+
 			<%= @well.last.started_at %>
 
 			<table class="table table-bordered">
@@ -38,7 +40,7 @@
 					<th>Country</th>
 					<th>Devise</th>
 				</tr>
-			<% @well.sort_by(&:started_at).each do |d| %>
+			<% @well.sort_by(&:started_at).reverse.each do |d| %>
 				<tr>
 					<td><%= d.os %></td>
 					<td><%= d.browser %></td>

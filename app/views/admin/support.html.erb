@@ -3,26 +3,22 @@
 		<ol class="breadcrumb">
 		  <li><a href="<%= root_path %>">Home</a></li>
 		  <li><a href="<%= admin_path %>">Admin</a></li>
-		  <li class="active">Visit</li>
+		  <li class="active">URL</li>
 		</ol>
 		<table class="table table-bordered container">
 			<tr>
 				<th>ID</th>
 				<th>Random ID</th>
 				<th>Link</th>
-				<th>User</th>
-				<th>Created AT</th>
-				<th>Visit Counter</th>
+				<th>Well</th>
 			</tr>
 
-		<% @visit.order("started_at DESC").each do |v| %>
+		<% @support.order("created_at DESC").each do |v| %>
 			<tr>
 				<td><%= v.id %></td>
-				<td><%= v.landing_page %></td>
-				<td><%= v.browser %></td>
-				<td><%= v.os %></td>
-				<td><%= v.country %></td>
-				<td><%= time_ago_in_words(v.started_at) %></td>
+				<td><%= v.email %></td>
+				<td><%= time_ago_in_words(v.created_at) %></td>
+				<td><a href="#">Show</a></td>
 			</tr>
 		<% end %>
 

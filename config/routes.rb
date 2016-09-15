@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :supports
 
   get 'admin/index', as: :admin
+  get 'admin/index/support' => 'admin#support', as: :admin_support
   get 'admin/index/user' => 'admin#user', as: :admin_user
   get 'admin/index/url' => 'admin#url', as: :admin_url
   get 'admin/index/visit' => 'admin#visit', as: :admin_visit

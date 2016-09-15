@@ -44,4 +44,15 @@ class AdminController < ApplicationController
 			redirect_to root_path, notice: "sorry"
 		end
 	end
+
+	def support
+		if current_user.email === "dawoodmehta@gmail.com"
+			@visit = Visit.all
+			@url = Url.all
+			@user = User.all
+			@support = Support.all
+		else
+			redirect_to root_path, notice: "sorry"
+		end
+	end
 end

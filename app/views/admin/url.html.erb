@@ -22,7 +22,7 @@
 				<td><%= url.random_id %></td>
 				<td><%= url.original %></td>
 				<td><%= url.user_id %></td>
-				<td><%= url.created_at %></td>
+				<td><%= time_ago_in_words(url.created_at) %></td>
 				<td><%= Visit.where(landing_page: "http://localhost:3000/" + url.random_id).count %></td>
 				<td><%= link_to 'Delete', url, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 				<!-- , class: "glyphicon glyphicon-trash" -->
