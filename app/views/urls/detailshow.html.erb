@@ -28,11 +28,7 @@
 
 			<% if @well.count > 0 %>
 
-			<% @wish.each do |d| %>
-				<%= d.browser %>
-			<% end %>
-
-			<%= @well.last.started_at %>
+			<%= @wish %>
 
 			<table class="table table-bordered">
 				<tr>
