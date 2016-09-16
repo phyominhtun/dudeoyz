@@ -42,7 +42,7 @@ class UrlsController < ApplicationController
 			@well = (@d + @detail + @detail2).sort_by(&:started_at).reverse
 
 			
-			@wish = [@detail.group(:os).count, @detail2.group(:os)].flatten
+			@wish = @detail.group(:os).count
 			
 
 	    else
