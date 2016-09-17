@@ -70,15 +70,15 @@
 						<% else %>
 							<h3><%= url.title %></h3><br>
 						<% end %>	
-						<a href="<%= urlshow_path(url.random_id) %>" target="_blank">http://oyz.kr/<%= url.random_id %></a>
+						<a href="<%= "http://www.oyz.kr/" + (url.random_id) %>" target="_blank">http://www.oyz.kr/<%= url.random_id %></a>
 						<span class="badge">
-							<%= Visit.where(landing_page: "http://localhost:3000/" + url.random_id).count +  Visit.where(landing_page: "http://oyz.kr/" + url.random_id).count  %>
+							<%= Visit.where(landing_page: "http://localhost:3000/" + url.random_id).count +  Visit.where(landing_page: "http://www.oyz.kr/" + url.random_id).count + Visit.where(landing_page: "https://oyz.herokuapp.com/" + url.random_id).count %>
 						</span>
 						<br>
 						<%= time_ago_in_words(url.created_at) %>
 						<div class="row">
 							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-								<a href="<%= detailshow_path(url.random_id) %>">
+								<a href="<%= "http://www.oyz.kr/" + (url.random_id) %>">
 									<h4 data-toggle="tooltip" data-placement="top" title="Analysis"><span class="glyphicon glyphicon-signal"></span></h4>
 								</a>
 							</div>

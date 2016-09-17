@@ -16,7 +16,7 @@
 			  		<h1><b><%= @visit.title %></b><br>
 			  	<% end %>
 			  	<small>
-			  		<a href="<%= urlshow_path(@visit.random_id) %>" id="lii">oyz.kr/<%= @visit.random_id %></a>
+			  		<a href="<%= "http://www.oyz.kr/" + (@visit.random_id) %>" id="lii">http://www.oyz.kr/<%= @visit.random_id %></a>
 			  	</small> <span class="badge"><%= @well.count %></span>
 			  	<a href="#" class="badge"  data-toggle="modal" data-target="#edit">
 			  		<span class="glyphicon glyphicon-edit"></span>
@@ -28,7 +28,9 @@
 
 			<% if @well.count > 0 %>
 
-			<%= @wish %>
+			<div class="page-header" id="center">
+			  <h3><small>Last Visit Was</small> <%= time_ago_in_words(@well.last.started_at) %></h3>
+			</div>
 
 			<table class="table table-bordered">
 				<tr>
@@ -54,7 +56,12 @@
 			</table>
 
 			<% else %>
-				<h4>Oops</h4>
+				<br>
+				<h2 id="center">Oops No Visit Yet!</h2>
+				<div class="page_more">
+				</div>
+				<div class="page_more">
+				</div>
 			<% end %>
 			<!-- <div class="row">
 				<div class="col-lg-5">
@@ -67,10 +74,6 @@
 			</div>
 				<hr>
 				<%= geo_chart @detail.group(:country).count %> --> 
-		</div>
-		<div class="page_more">
-		</div>
-		<div class="page_more">
 		</div>
 		<div class="page_more">
 		</div>

@@ -38,12 +38,11 @@ class UrlsController < ApplicationController
 			@detail = Visit.where(landing_page: "https://oyz.herokuapp.com/" + params[:random_id])
 			@detail2 = Visit.where(landing_page: "http://www.oyz.kr/" + params[:random_id])
 			@detail3 = Visit.where(landing_page: "http://oyz.kr/" + params[:random_id])
+			@h = Visit.where(landing_page: "http://localhost:3000/u/login")
 
-			@well = (@d + @detail + @detail2).sort_by(&:started_at).reverse
+			@well = (@d + @detail + @detail2)
 
-			
-			@wish = @detail.group(:os).count
-			
+			@wish = Visit.where(landing_page: @du).where(browser: "Chrome").count	
 
 	    else
 	        redirect_to root_path,
@@ -67,9 +66,9 @@ class UrlsController < ApplicationController
 			redirect_to( 
 							(:back), 
 							notice: %Q[Your link has been shorten</br>
-										#{view_context.link_to("http://oyz.kr/#{@url.random_id}", 
-											urlshow_path(@url.random_id))}</br> 
-										#{view_context.link_to("Detail", "http://oyz.kr/" + (@url.random_id))}.],
+										#{view_context.link_to("http://www.oyz.kr/#{@url.random_id}", 
+											"http://www.oyz.kr/" + (@url.random_id))}</br> 
+										#{view_context.link_to("Detail", "http://www.oyz.kr/" + (@url.random_id) + "/+")}.],
     						flash: { html_safe: true }
   						)
 		else
@@ -83,7 +82,7 @@ class UrlsController < ApplicationController
 	      if @url.update(urls_params)
 	        format.html { redirect_to detailshow_path(@url.random_id), notice: 'Title was successfully changed.' }
 	      else
-	        format.html { redirect_to (:back), notice: "Oops something went wrong" }
+	        format.html { redirect_to (:back), alert: "Oops something went wrong. Maybe ID you requested was too short or it's already exist" }
 	      end
 	    end
 	end
