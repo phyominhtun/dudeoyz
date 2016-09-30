@@ -35,14 +35,9 @@ class UrlsController < ApplicationController
 
 			@visit = Url.find_by_random_id(params[:random_id])
 			@d = Visit.where(landing_page: "http://localhost:3000/" + params[:random_id])
-			@detail = Visit.where(landing_page: "https://oyz.herokuapp.com/" + params[:random_id])
-			@detail2 = Visit.where(landing_page: "http://www.oyz.kr/" + params[:random_id])
-			@detail3 = Visit.where(landing_page: "http://oyz.kr/" + params[:random_id])
-			@h = Visit.where(landing_page: "http://localhost:3000/u/login")
-
-			@well = (@d + @detail + @detail2)
-
-			@wish = Visit.where(landing_page: @du).where(browser: "Chrome").count	
+			@detail = Visit.where(landing_page: "http://www.oyz.kr/" + params[:random_id])
+			#@detail2 = Visit.where(landing_page: "https://oyz.herokuapp.com/" + params[:random_id])
+			#@detail3 = Visit.where(landing_page: "http://oyz.kr/" + params[:random_id])
 
 	    else
 	        redirect_to root_path,

@@ -72,7 +72,8 @@
 						<% end %>	
 						<a href="<%= "http://www.oyz.kr/" + (url.random_id) %>" target="_blank">http://www.oyz.kr/<%= url.random_id %></a>
 						<span class="badge">
-							<%= Visit.where(landing_page: "http://localhost:3000/" + url.random_id).count +  Visit.where(landing_page: "http://www.oyz.kr/" + url.random_id).count + Visit.where(landing_page: "https://oyz.herokuapp.com/" + url.random_id).count %>
+							<%= Visit.where(landing_page: "http://www.oyz.kr/" + url.random_id).count + 
+								Visit.where(landing_page: "http://localhost:3000/" + url.random_id).count %>
 						</span>
 						<br>
 						<%= time_ago_in_words(url.created_at) %>

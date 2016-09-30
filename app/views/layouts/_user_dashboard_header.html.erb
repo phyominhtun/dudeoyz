@@ -15,7 +15,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right" id="navbar-dashboard">
-        <% if current_user.email = "dawoodmehta@gmail.com" %>
+        <% if current_user.email === "dawoodmehta@gmail.com" %>
           <li><a href="<%= admin_path %>">Admin</a></li>
         <% end %>
         <li><a href="#" data-toggle="modal" data-target="#mySupport">Support</a></li>

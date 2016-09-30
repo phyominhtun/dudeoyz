@@ -16,8 +16,8 @@
 			  		<h1><b><%= @visit.title %></b><br>
 			  	<% end %>
 			  	<small>
-			  		<a href="<%= "http://www.oyz.kr/" + (@visit.random_id) %>" id="lii">http://www.oyz.kr/<%= @visit.random_id %></a>
-			  	</small> <span class="badge"><%= @well.count %></span>
+			  		<a href="<%= "http://www.oyz.kr/" + (@visit.random_id) %>" id="lii">www.oyz.kr/<%= @visit.random_id %></a>
+			  	</small> <span class="badge"><%= @detail.count %></span>
 			  	<a href="#" class="badge"  data-toggle="modal" data-target="#edit">
 			  		<span class="glyphicon glyphicon-edit"></span>
 			  	</a>
@@ -26,10 +26,10 @@
 			  </h1>
 			</div>
 
-			<% if @well.count > 0 %>
+			<% if @detail.count > 0 %>
 
 			<div class="page-header" id="center">
-			  <h3><small>Last Visit Was</small> <%= time_ago_in_words(@well.last.started_at) %></h3>
+			  <h3><small>Last Visit Was</small> <%= time_ago_in_words(@detail.last.started_at) %></h3>
 			</div>
 
 			<table class="table table-bordered">
@@ -40,7 +40,7 @@
 					<th>Country</th>
 					<th>Devise</th>
 				</tr>
-			<% @well.sort_by(&:started_at).reverse.each do |d| %>
+			<% @detail.sort_by(&:started_at).reverse.each do |d| %>
 				<tr>
 					<td><%= d.os %></td>
 					<td><%= d.browser %></td>
