@@ -16,13 +16,15 @@
 			  		<h1><b><%= @visit.title %></b><br>
 			  	<% end %>
 			  	<small>
-			  		<a href="<%= "http://www.oyz.kr/" + (@visit.random_id) %>" id="lii">www.oyz.kr/<%= @visit.random_id %></a>
-			  	</small> <span class="badge"><%= @detail.count %></span>
+			  		<a target="_blank" href="<%= "http://www.oyz.kr/" + (@visit.random_id) %>" 
+			  				id="lii">www.oyz.kr/<%= @visit.random_id %></a>
+			  	</small>
+			  	<span class="badge"><%= @detail.count %></span>
 			  	<a href="#" class="badge"  data-toggle="modal" data-target="#edit">
 			  		<span class="glyphicon glyphicon-edit"></span>
 			  	</a>
 			  	<br>
-			  	<h6><%= @visit.original %></h6>
+			  	<h6><a target="_blank" href="<%= @visit.original %>"><%= @visit.original %></a></h6>
 			  </h1>
 			</div>
 
@@ -31,6 +33,20 @@
 			<div class="page-header" id="center">
 			  <h3><small>Last Visit Was</small> <%= time_ago_in_words(@detail.last.started_at) %></h3>
 			</div>
+
+			<div class="row">
+				<div class="col-lg-6">
+					<h3 id="center">Browser Type</h3>
+					<%= pie_chart @detail.group(:browser).count %>
+				</div>
+
+				<div class="col-lg-6">
+					<h3 id="center">Country</h3>
+					<%= pie_chart @detail.group(:country).count %>
+				</div>
+			</div>
+
+			<hr>
 
 			<table class="table table-bordered">
 				<tr>
