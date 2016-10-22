@@ -34,8 +34,15 @@ class UrlsController < ApplicationController
 			@url.random_id = (0...6).map{ letters[rand(letters.length)] }.join
 
 			@visit = Url.find_by_random_id(params[:random_id])
-			@d = Visit.where(landing_page: "http://localhost:3000/" + params[:random_id])
-			@detail = Visit.where(landing_page: "http://www.oyz.kr/" + params[:random_id])
+
+			if Rails.env.production?
+				@detail = Visit.where(landing_page: "http://www.oyz.kr/" + params[:random_id])
+			else
+				@detail = Visit.where(landing_page: "http://localhost:3000/" + params[:random_id])
+			end
+			
+			#@d = Visit.where(landing_page: "http://localhost:3000/" + params[:random_id])
+			#@detail = Visit.where(landing_page: "http://www.oyz.kr/" + params[:random_id])
 			#@detail2 = Visit.where(landing_page: "https://oyz.herokuapp.com/" + params[:random_id])
 			#@detail3 = Visit.where(landing_page: "http://oyz.kr/" + params[:random_id])
 
