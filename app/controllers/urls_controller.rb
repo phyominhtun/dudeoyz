@@ -109,7 +109,7 @@ class UrlsController < ApplicationController
 	def check
 		if @visit.user === nil
 		elsif current_user != @visit.user
-			redirect_to root_path, 
+			redirect_to login_path, 
 					notice: %Q[
 						Sorry this URL is private if you own this URL #{view_context.link_to("Login", login_path)} to see.
 						],
