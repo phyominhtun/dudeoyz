@@ -50,6 +50,14 @@ class UrlsController < ApplicationController
 	        redirect_to root_path,
 	        alert: 'Oops something went wrong'
 	    end
+
+	    if @visit.title === nil
+	    	@title = "</O>"
+	    elsif @visit.title === ""
+	    	@title = "</O>"
+	    else
+	    	@title = @visit.title
+	    end
 	end
 
 	def urls_params
