@@ -37,31 +37,41 @@
 			<div class="row">
 				<div class="col-lg-6 col-md-6">
 					<h3 id="center">Browser Type</h3>
-						<%= pie_chart @detail.group(:browser).count %>
+						<%= pie_chart @detail.group(:browser).count,
+										 library: {backgroundColor: "transparent" } %>
 				</div>
 
 				<div class="col-lg-6 col-md-6">
 					<h3 id="center">Country</h3>
-						<%= pie_chart @detail.group(:country).count %>
+						<%= pie_chart @detail.group(:country).count,
+										 library: {backgroundColor: "transparent"} %>
 				</div>
 
 
-				<div class="col-lg-12 col-md-12">
-					<h3 id="center">Browser Type</h3>
+				<div class="col-lg-6 col-md-6">
+					<h3 id="center">Monthly Chart</h3>
 						<%= area_chart @detail.group_by_month(:started_at), colors: ["#12E092", "#999"], 
-										library: {backgroundColor: "#f3f3f3"} %>
+										library: {backgroundColor: "transparent"} %>
 				</div>
 
-				<div class="col-lg-12 col-md-12">
-					<h3 id="center">Country</h3>
+				<div class="col-lg-6 col-md-6">
+					<h3 id="center">Daily Chart</h3>
 						<%= area_chart @detail.group_by_day(:started_at), colors: ["#12E092", "#999"],
-										 library: {backgroundColor: "#f3f3f3"} %>
+										 library: {backgroundColor: "transparent"} %>
 				</div>
 			</div>
 
 			<hr>
+			<div class="">
+				<div id="center">
+					<a href="#">Full Detail</a>
+				</div>
+			</div>
+			<hr>
 
-			<table class="table table-bordered">
+			<!-- <hr> -->
+
+			<!-- <table class="table table-bordered">
 				<tr>
 					<th>OS</th>
 					<th>Browser</th>
@@ -82,7 +92,7 @@
 					<td><%= d.device_type %></td>
 				</tr>
 			<% end %>
-			</table>
+			</table> -->
 
 			<% else %>
 				<br>
