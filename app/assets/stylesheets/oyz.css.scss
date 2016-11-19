@@ -46,7 +46,7 @@ body {
 
 /* Dashboard Start */
 .dashboard {
-	background-color: #252830;
+	background-color: #5D4384;
 	color: white;
 
 	a {
@@ -126,11 +126,12 @@ body {
 }
 
 .user_edit {
-	background-color: #252830;
+	background-color: #5D4384;
 	color: white;
 
 	.user_edit_jumbotron {
-		background: -webkit-linear-gradient(#252830, #3A344F, #2F3655);
+		/* background: -webkit-linear-gradient(#252830, #3A344F, #2F3655); */
+		background: transparent;
 		max-width: 70%;
 	}
 }
@@ -177,7 +178,7 @@ body {
 
 .welcome_text {
 	padding-bottom: 20px;
-	background: -webkit-linear-gradient(#43cea2, #43cea2, #f3f3f3);
+	background: -webkit-linear-gradient(#43cea2, #f3f3f3, #43cea2);
   	-webkit-background-clip: text;
   	-webkit-text-fill-color: transparent;
 }
@@ -222,7 +223,7 @@ body {
 }
 
 #landing_page {
-	background: #252830;
+	background: #5D4384;
 	color: white;
 
 	.jumbotron_tran {
@@ -271,7 +272,7 @@ body {
 /* Devise Start */
 
 .form_devise_login {
-	background: #252830;
+	background: #5D4384;
 	color: white;
 
 	.modal_dashboard {

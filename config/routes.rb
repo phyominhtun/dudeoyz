@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   root 'pages#home'
 
   get '/' => 'pages#home'
-  get '/about' => 'pages#about', as: :about
+  get '/company/about' => 'pages#about', as: :about
 
   resources :urls
 

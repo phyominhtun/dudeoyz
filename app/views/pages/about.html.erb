@@ -2,11 +2,42 @@
 	<%= render 'layouts/other_header' %>
 	<div class="container" id="dasboard_index">
 		<%= render 'layouts/noti' %>
-		<div class="page_more">
+		<div class="jumbotron">
+		  <h1>Hello, world!</h1>
+		  <p>orem ipsum dolor sit amet, in mea nonumes dissentias dissentiunt, pro te solet oratio iriure. Cu sit consetetur moderatius intellegam, ius decore accusamus te. Ne primis suavitate disputando nam. Mutat convenirete</p>
+		  <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
 		</div>
-		<div class="page_more">
+		<hr>
+		<div class="page-header" id="center">
+		  <h1>Example page header <small>Subtext for header</small></h1>
 		</div>
+		<div class="row" id="center">
+		  <div class="col-lg-4 col-xs-6 col-md-3">
+		    <a href="#" class="thumbnail">
+		      <img src="<%= asset_path '01.jpg' %>" alt="...">
+		    </a>
+		  </div>
+		  <div class="col-lg-4 col-xs-6 col-md-3">
+		    <a href="#" class="thumbnail">
+		      <img src="<%= asset_path '02.jpg' %>" alt="...">
+		    </a>
+		  </div>
+		  <div class="col-lg-4 col-xs-6 col-md-3">
+		    <a href="#" class="thumbnail">
+		      <img src="<%= asset_path '03.jpg' %>" alt="...">
+		    </a>
+		  </div>
+		</div>
+		<hr>
+		<p>
+			<span id="landing_footer_logo"><<span>/<b>O</b></span>></span><span class="landing_footer_text">Oyz.KR</span>
+			Lorem ipsum dolor sit amet, in mea nonumes dissentias dissentiunt, pro te solet oratio iriure. Cu sit consetetur moderatius intellegam, ius decore accusamus te. Ne primis suavitate disputando nam. Mutat convenirete.Lorem ipsum dolor sit amet, in mea nonumes dissentias dissentiunt, pro te solet oratio iriure. Cu sit consetetur moderatius intellegam, ius decore accusamus te. Ne primis suavitate disputando nam. Mutat convenirete.Lorem ipsum dolor sit amet, in mea nonumes dissentias dissentiunt, pro te solet oratio iriure. Cu sit consetetur moderatius intellegam, ius decore accusamus te. Ne primis suavitate disputando nam. Mutat convenirete.Lorem ipsum dolor sit amet, in mea nonumes dissentias dissentiunt, pro te solet oratio iriure. Cu sit consetetur moderatius intellegam, ius decore accusamus te. Ne primis suavitate disputando nam. Mutat convenirete.
+		</p>
 	</div>
+	<%= render 'layouts/footer' %>
 </div>
 
 <%= render 'pages/support_modal' %>
+<div id="center">
+	<%= render 'pages/shorten_modal' %>
+</div>
